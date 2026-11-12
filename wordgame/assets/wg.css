@@ -1,0 +1,59 @@
+/* Tijori: the safe with dials, the list of guesses, the keyboard. Purple for locked, orange for "elsewhere". */
+.tj{max-width:520px;margin:12px auto;--lk:#7c3aed;--ls:#b45309}
+:root[data-theme=dark] .tj{--lk:#a78bfa;--ls:#fbbf24}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .tj{--lk:#a78bfa;--ls:#fbbf24}}
+.tj-info{color:var(--soft);font-size:.9rem;margin:0 0 8px;text-align:center}
+.tj-datel{display:flex;gap:8px;align-items:center;justify-content:center;margin-bottom:8px;font-weight:600}
+.tj-datel input{min-height:44px;padding:8px 10px;font:inherit;font-size:1rem;color:var(--ink);background:var(--field);border:1px solid var(--field-line);border-radius:10px}
+.tj-safe{background:var(--surface);border:2px solid var(--line);border-radius:18px;padding:16px 10px;box-shadow:var(--shadow)}
+.tj-dials{display:flex;gap:8px;justify-content:center}
+.tj-dial{width:min(17vw,64px);aspect-ratio:1;border-radius:50%;border:3px dashed var(--field-line);display:grid;place-items:center;font:700 clamp(1.3rem,6vw,1.9rem)/1 var(--font-head);text-transform:uppercase;color:var(--soft)}
+.tj-dial.on{border:3px solid var(--lk);background:color-mix(in srgb,var(--lk) 16%,var(--surface));color:var(--ink);animation:tjpop .35s ease}
+.tj-dial.rv{color:var(--bad);border-style:dotted}
+@keyframes tjpop{0%{transform:scale(.7) rotate(-40deg)}100%{transform:none}}
+.tj-hist{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:6px}
+.tj-hist li{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:6px 10px;min-height:44px;margin:0}
+.tj-hist li>b{color:var(--soft);font-weight:600;width:1.2em;text-align:right}
+.tj-hist .w{display:flex;gap:3px;font:700 1.2rem/1 var(--mono);text-transform:uppercase;letter-spacing:.04em}
+.tj-hist .w span{min-width:1.5em;height:1.7em;display:grid;place-items:center;border-radius:50%}
+.tj-hist .w span.lk{box-shadow:inset 0 0 0 2px var(--lk);background:color-mix(in srgb,var(--lk) 14%,var(--surface))}
+.tj-hist .fb{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.tj-hist em{font-style:normal;font-weight:700;font-size:.82rem;padding:3px 8px;border-radius:99px;white-space:nowrap}
+.tj-hist em.lk{color:var(--lk);border:1px solid var(--lk)}.tj-hist em.ls{color:var(--ls);border:1px solid var(--ls)}
+.tj-hist em.no{color:var(--soft);border:1px solid var(--line)}.tj-hist em.ok{background:var(--lk);color:#fff}
+.tj-hist.demo{max-width:440px;--lk:#7c3aed;--ls:#b45309}
+.tj[lang=hi] .tj-hist .w{text-transform:none;font-family:var(--font);letter-spacing:0}
+.tj[lang=hi] .tj-hist .w span{min-width:2em;border-radius:10px}
+.tj-entry{display:flex;gap:6px;justify-content:center;margin:12px 0 4px}
+.tj-entry span{width:min(15vw,54px);height:min(15vw,54px);border:2px solid var(--field-line);border-radius:10px;background:var(--field);display:grid;place-items:center;font:700 clamp(1.2rem,5.5vw,1.7rem)/1 var(--font-head);text-transform:uppercase}
+.tj[lang=hi] .tj-entry span{width:min(24vw,84px);text-transform:none}
+.tj-entry span.f{border-color:var(--ink)}.tj-entry span.at{border-color:var(--lk);box-shadow:0 0 0 2px color-mix(in srgb,var(--lk) 30%,transparent)}
+.tj-entry span i{font-style:normal;color:var(--soft);opacity:.45}
+.tj-entry.shake{animation:tjshake .35s}
+@keyframes tjshake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.tj-msg{min-height:1.6em;text-align:center;margin:6px 0;font-weight:600}
+.tj-end{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin:8px 0}
+.tj-next{font:600 1rem var(--mono)}
+.tj-bar2{display:flex;gap:8px;align-items:center;margin:8px 0}
+.tj-left{margin-right:auto;color:var(--soft);font-size:.9rem}
+.tj-bar2 .btn{min-height:40px}.tj-bar2 .btn[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
+.tj-kb{display:grid;gap:6px;user-select:none;touch-action:manipulation}
+.tj-row{display:flex;gap:4px;justify-content:center}
+.tj-kb button{flex:1 1 0;min-width:0;max-width:44px;height:50px;border:1px solid var(--field-line);border-radius:8px;background:var(--surface);color:var(--ink);font:700 1.05rem var(--font);text-transform:uppercase;cursor:pointer;padding:0;touch-action:manipulation}
+.tj-kb button.wide{flex:1.6 1 0;max-width:72px;font-size:.8rem;text-transform:none}
+.tj-kb[lang=hi] button{text-transform:none;font-size:1.15rem;height:46px}
+.tj-kb[lang=hi] button.wide{max-width:none;font-size:1rem;height:48px}.tj-kb button.go{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.tj-kb button.mt{background:var(--surface2)}
+.tj-kb button.out{opacity:.32}
+.tj-kb button.in{box-shadow:inset 0 0 0 2px var(--lk)}
+.tj-kb.marking button[data-k]:not(.wide){border-style:dashed}
+@media (prefers-reduced-motion:reduce){.tj-dial.on,.tj-entry.shake{animation:none}}
+.tj-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.tj-nums div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center}
+.tj-nums dt{font-size:.78rem;color:var(--soft)}.tj-nums dd{margin:0;font:700 1.4rem var(--font-head)}
+.tj-bar{display:flex;gap:8px;align-items:center;margin:3px 0;font-size:.9rem}.tj-bar span{width:1.2em;text-align:right;color:var(--soft)}
+.tj-bar i{font-style:normal;background:#7c3aed;color:#fff;border-radius:6px;padding:2px 8px;min-width:28px;text-align:right;font-weight:700}
+.postab td.hot{font-weight:700;background:color-mix(in srgb,var(--accent) 14%,var(--surface))}
+.postab td,.postab th{text-align:center}
+.tj-hist{grid-template-columns:minmax(0,1fr)}.tj-hist .fb{min-width:0}
+@media (max-width:380px){.tj-hist .w{font-size:1rem}.tj-hist .w span{min-width:1.3em}.tj-hist li{gap:6px;padding:6px 8px}.tj-hist em{font-size:.74rem;padding:2px 6px}}

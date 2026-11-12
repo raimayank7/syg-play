@@ -1,0 +1,44 @@
+/* Board Games: figures (boards drawn in SVG), game cards, dice */
+.fig{margin:18px 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.fig svg{display:block;width:100%;max-width:440px;height:auto;margin:0 auto}
+.fig figcaption{font-size:.93rem;color:var(--soft);margin-top:8px;text-align:center}
+.bd text{font-family:var(--font);text-anchor:middle}
+.bd .sl{fill:#f0d9b5}.bd .sd{fill:#b58863}.bd .sq2{fill:#dfe9c8}.bd .fr{fill:none;stroke:#333;stroke-width:2}
+.bd .co{font-size:11px;fill:var(--soft)}
+.bd .pc{font-size:40px;dominant-baseline:central;font-family:"Segoe UI Symbol","Noto Sans Symbols2","DejaVu Sans","Arial Unicode MS",serif}
+.bd .pw{fill:#fff;stroke:#111;stroke-width:1.6;paint-order:stroke}.bd .pb{fill:#111;stroke:#f5f5f5;stroke-width:.8;paint-order:stroke}
+.bd .mk{fill:#1d7a46;opacity:.75}
+.bd .dw{fill:#f6efe0;stroke:#333;stroke-width:1.5}.bd .db{fill:#2b2b2b;stroke:#000;stroke-width:1.5}.bd .dk{fill:none;stroke:#d9a400;stroke-width:3}
+.bd .sn{font-size:11px;fill:#333;text-anchor:start}
+.bd .ld{stroke:#8a5a14;stroke-width:3.5;fill:none;stroke-linecap:round}
+.bd .snk{stroke:#c0392b;stroke-width:7;fill:none;stroke-linecap:round;opacity:.85}.bd .snh{fill:#7d1f14}
+.bd .ln{stroke:var(--ink);stroke-width:3;fill:none;stroke-linecap:round}.bd .ln1{stroke:#333;stroke-width:1;fill:none}
+.bd .pt{fill:var(--surface);stroke:var(--ink);stroke-width:2.5}.bd .tg{fill:#e67e22;stroke:#333;stroke-width:2}
+.bd .cfr{fill:#7a4a22}.bd .cpl{fill:#f3dfb6}.bd .cpk{fill:#222}.bd .cl{stroke:#333;stroke-width:1.5}.bd .cc{fill:#c0392b;stroke:#333}.bd .cq{fill:#d62828;stroke:#333}
+.bd .ta{fill:#9c5b2e}.bd .tb{fill:#e9d3a7}
+.bd .h1{fill:#e5484d}.bd .h2{fill:#30a46c}.bd .h3{fill:#f5b800}.bd .h4{fill:#3e63dd}.bd .h5{fill:#8e4ec6}.bd .h6{fill:#f76b15}
+.bd .h1,.bd .h2,.bd .h3,.bd .h4,.bd .h5,.bd .h6{stroke:#333;stroke-width:1}
+.bd .rv{fill:#2e8b57}.bd .gm{fill:#e8c98a}.bd .sea{fill:#dbeafe}
+.bd .dt{fill:var(--ink)}.bd .pcx{font-size:26px;font-weight:700;fill:var(--accent)}
+.bd .sd2{fill:#6b4423}.bd .dm{fill:#fffdf5;stroke:#333;stroke-width:2}.bd .dp{fill:#222}
+.gcards{list-style:none;padding:0;margin:14px 0;display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.gcard a{display:flex;flex-direction:column;gap:4px;height:100%;padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);text-decoration:none;color:var(--ink)}
+.gcard a:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.gcard b{font:700 1.1rem var(--font-head)}.gcard span{color:var(--soft)}.gcard small{color:var(--soft);font-size:.82rem;margin-top:auto;padding-top:6px}
+.dice-out{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;min-height:64px}
+.die{width:60px;height:60px;border-radius:12px;background:#fff;border:2px solid #333;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:8px;animation:roll .35s ease}
+.die i{width:10px;height:10px;border-radius:50%;background:#222;place-self:center}
+.cowrie{width:44px;height:60px;border-radius:50%;background:#f5ecd7;border:2px solid #6b4423;display:grid;place-items:center;animation:roll .35s ease}
+.cowrie.up::after{content:"";width:6px;height:36px;border-radius:6px;background:#6b4423}
+@keyframes roll{from{transform:rotate(-90deg) scale(.6);opacity:.3}}
+@media (prefers-reduced-motion:reduce){.die,.cowrie{animation:none}}
+.pbs{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.pbs .fig{margin:0}.pbs figcaption{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+.next{color:var(--soft)}
+input[type=search]{font-size:1rem}
+@media print{
+  body.print-one main>*:not(.pbs),body.print-one .pbs .fig:not(.printing),.boot{display:none!important}
+  body.print-one .pbs{display:block}body.print-one .fig.printing{border:0;padding:0}
+  body.print-one .fig.printing svg{max-width:none;width:180mm}body.print-one .fig.printing figcaption button{display:none}
+  .bd .ln,.bd .pt{stroke:#000}.bd .pt{fill:#fff}.bd .dt{fill:#000}
+}
