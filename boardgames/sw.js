@@ -1,6 +1,6 @@
-const CACHE = 'syg-boardgames-cdc110db81', SHELL = ["/boardgames/assets/site.css?v=1f799d5064", "/boardgames/assets/site.js?v=be6129bb4a", "/boardgames/icons/logo-light.webp", "/boardgames/icons/logo-dark.webp"];
+const CACHE = 'syg-m-boardgames-cdc110db81', SHELL = ["/boardgames/assets/site.css?v=1f799d5064", "/boardgames/assets/site.js?v=be6129bb4a", "/boardgames/icons/logo-light.webp", "/boardgames/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
-self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
+self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-boardgames-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
   const r = e.request, u = new URL(r.url);
   if (r.method !== 'GET' || u.origin !== location.origin) return;
