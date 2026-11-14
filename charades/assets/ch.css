@@ -1,0 +1,8 @@
+
+.ch-card{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px;margin:14px 0}
+.ch-t{font:700 2.2rem var(--font-head);color:var(--accent);margin:.1em 0}.ch-w{font:800 clamp(1.8rem,8vw,3.4rem)/1.15 var(--font-head);margin:.3em 0;overflow-wrap:anywhere}.ch-l{font-size:clamp(4rem,24vw,8rem)}
+.ch-s{color:var(--soft);font-size:1.2rem;margin:.2em 0}.ch-teams{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.ch-teams>div{background:var(--surface2);border-radius:12px;padding:10px}
+.chips-w{list-style:none;padding:0;margin:12px 0;display:flex;flex-wrap:wrap;gap:8px}.chips-w li{padding:7px 13px;border:1px solid var(--line);border-radius:99px;background:var(--surface)}
+.cc-t{border-collapse:collapse;width:100%;margin:12px 0}.cc-t th,.cc-t td{border:1px solid var(--line);padding:7px 9px;text-align:left}.cc-t th{background:var(--surface2)}
+.acts{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+@media print{.hd,.ft,.nav,.crumbs,.acts,.finder{display:none}.chips-w li{border:1px solid #000}}

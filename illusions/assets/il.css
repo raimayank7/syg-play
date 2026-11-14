@@ -1,0 +1,7 @@
+
+.il-fig{margin:12px 0}.il-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px;max-width:520px;margin:0 auto}.il-box svg{display:block;width:100%;height:auto}
+.il-tog{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:10px 0}
+#af-pic{max-width:300px;height:240px;margin:10px auto;border-radius:14px;position:relative;border:1px solid var(--line)}#af-pic[data-state=idle],#af-pic[data-state=stare]{background:#00ffff}#af-pic[data-state=white]{background:#fff}
+#af-pic i{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px;border-radius:50%;background:#000}.il-msg{text-align:center;font-weight:600;min-height:3em}
+.il-tab{border-collapse:collapse;margin:10px 0;max-width:100%;display:block;overflow-x:auto}.il-tab th,.il-tab td{border:1px solid var(--line);padding:6px 10px;text-align:left}.il-tab th{background:var(--surface2)}
+.grid a{min-width:0;overflow-wrap:anywhere}.grid a small{display:block;white-space:normal}
