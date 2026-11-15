@@ -1,4 +1,5 @@
 
+.grid a{flex-wrap:wrap}.grid a small{white-space:normal}
 .ar-s{text-align:center;font-size:1.05rem;margin:.5em 0}
 .ar-cv{display:block;margin:10px auto;width:min(100%,420px);aspect-ratio:1;background:#10161f;border-radius:12px;touch-action:none}
 .ar-pad{display:grid;grid-template-columns:repeat(3,64px);gap:6px;justify-content:center;margin:10px auto}.ar-pad button{height:56px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.3rem;cursor:pointer}
