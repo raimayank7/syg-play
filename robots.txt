@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://play.shareyourgroup.com/sitemap.xml
+Sitemap: http://play.shareyourgroup.com/sitemap.xml
